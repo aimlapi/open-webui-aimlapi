@@ -172,6 +172,18 @@ async def get_headers_and_cookies(
             if 'openrouter.ai' in url
             else {}
         ),
+        **(
+            {
+                # Rebate attribution id (part_...) for the "open-webui" partner
+                # row in AI/ML API's rebate_partners table.
+                'X-AIMLAPI-Partner-ID': 'part_PPI9HVQYWKtG27sUOmOJ4Qro',
+                'X-AIMLAPI-Source': 'agent/open-webui',
+                'HTTP-Referer': 'https://openwebui.com/',
+                'X-Title': 'Open WebUI',
+            }
+            if 'api.aimlapi.com' in url
+            else {}
+        ),
     }
 
     if ENABLE_FORWARD_USER_INFO_HEADERS and user:
