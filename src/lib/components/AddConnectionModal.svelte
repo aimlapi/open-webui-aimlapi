@@ -344,6 +344,7 @@
 
 									{#if !ollama}
 										<datalist id="suggestions">
+											<option value="https://api.aimlapi.com/v1" />
 											<option value="https://api.openai.com/v1" />
 											<option value="https://api.anthropic.com/v1" />
 											<option value="https://generativelanguage.googleapis.com/v1beta/openai" />
